@@ -15,6 +15,7 @@ main = do
                     , ppTitle = xmobarColor "green" "" . shorten 50
                     }
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
+        , startupHook = startup
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
@@ -25,5 +26,5 @@ main = do
         
 startup :: X ()
 startup = do
-  spawn "feh --bg-fill potato_glados.jpg"
+  spawn "feh --bg-fill ~/.xmonad/potato_glados.jpg"
   spawn "xsetroot -cursor_name left_ptr"
