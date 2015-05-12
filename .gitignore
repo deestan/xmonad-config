@@ -1,2 +1,4 @@
-xmonad*
-!xmonad.hs
+*.o
+*.errors
+*.hi
+xmonad-x86_64-linux
